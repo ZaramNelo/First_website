@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JUNCTION ACADEMY</title>
+</head>
+<body>
+    <div class="container_1">
+   <h1>WELCOME TO JUNCTION ACADEMY</h1>
+   <h4>phone: 647-555-7485</h4>
+   <h4>email: junctionacademy@gmail.com</h4>
+   <h4>Location: 277 Jarvis St. Toronto, ON M5B 2C2</h4>
+   </div>
+
+   <img src="{% static 'images/image_1.jpg' %}" alt="" width="800em">
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+    , totam cumque deserunt facilis est minima animi sed omnis rem? Nobis
+     error repudiandae nesciunt hic qui animi iure ab quaerat laboriosam.
+    </p>
+    <a href="{% url 'sign_up' %}">
+    <button>Sign up!</button>
+    </a>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Esse perferendis autem doloremque provident, dignissimos 
+        error dolorum rerum, optio voluptatum dolor similique 
+        quisquam necessitatibus nostrum officiis ex ipsum, nesciunt 
+        impedit! Sit.
+    </p>
+    <a href="{% url 'free_trial' %}">
+    <button>Get a free trial!</button>
+    </a>
+    <br><br>
+    <a href="{% url 'Log_in' %}">
+    <button>Log in</button>
+    </a>
+
+    
+</body>
+</html>

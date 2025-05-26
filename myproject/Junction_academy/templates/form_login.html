@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <a href="{% url 'Homepage' %}" target="back to homepage">
+        <button type="button"> BACK </button><br><br>
+    </a>
+    <form action="{% url 'Log_in' %}" method="POST">
+        {% csrf_token %}
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" value="{{ email }}" placeholder="DavidJohn@gmail.com" required><br><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">Submit</button>
+    </form>
+
+    {% if message1 %}
+    <p style="color: red;">{{ message1 }}</p>
+{% endif %}
+
+{% if message2 %}
+<p style="color: red;">{{ message2 }}</p>
+{% endif %}
+
+
+</body>
+</html>

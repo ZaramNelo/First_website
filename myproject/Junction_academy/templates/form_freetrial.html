@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Data</title>
+</head>
+<body>
+    <a href="{% url 'Homepage' %}" target="back to homepage">
+    <button type="button"> BACK </button>
+    </a>
+    <h1>Submit your information</h1>
+    <form action="/form_freetrial" method="POST">
+        <label for="name">Fullname:</label><br>
+        <input type="text" id="name" name="name"  required placeholder="David John"><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required placeholder="DavidJohn@gmail.com"><br><br>
+        
+        <label for="number">Phone:</label><br>
+        <input type="tel" id="number" name="number" required placeholder="123-456-7890"><br><br>
+
+        <label for="date">Date available:</label><br>
+        <input type="date" id="date" name="date" required min="{{today}}" ><br>
+
+        <label >Note:We are open from 11am-9pm, you can come for your free trial anyday between this time frame </label>
+        <br>
+        <br>
+
+
+        
+
+
+        <input type="submit" value="Submit">
+    </form>
+   
+    {% if message %}
+    <p >{{ message }}</p>
+{% endif %}
+</body>
+</html>
