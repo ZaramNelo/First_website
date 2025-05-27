@@ -7,3 +7,9 @@ class Account_owners(models.Model):
     Number = models.IntegerField()
     password = models.CharField()
 
+class Free_trials_list(models.Model):
+    Fullname = models.CharField(max_length=64)
+    Email = models.CharField(max_length=64, unique=True)
+    Date = models.DateField()
+    Time = models.TimeField()
+

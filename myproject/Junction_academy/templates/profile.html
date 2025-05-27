@@ -6,13 +6,21 @@
 </head>
 <body>
     <h1>JUNCTION ACADEMY</h1>
-    <a href="{% url 'Homepage' %}">
+    <a href="{% url 'Logout' %}">
     <button>Log Out</button>
+
     </a>
     <hr>
     <h3>Welcome {{user.Fullname}}</h3>
     <label>email:{{user.Email}}</label><br>
-    <label>Phone:{{user.Number}}</label>
+    <label>Phone:{{user.Number}}</label><br><br>
+    <a href="{% url 'free_trial' %}">
+    <button>Freetrial</button><br><br>
+    </a>
+    <a href="">
+    <button>Become a member</button>
+    </a>
+    
 
     
     

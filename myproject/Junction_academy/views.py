@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.hashers import make_password,check_password
 from django.http import HttpResponse
-from .models import Account_owners
+from .models import Account_owners,Free_trials_list
+from datetime import date
 
 # Create your views here.
 def Homepage(request):
+    if request.session.get("user_id"):
+        return redirect("profile")
     return render(request, "homepage.html")
 
 def sign_up(request):
@@ -56,11 +59,36 @@ def Log_in(request):
     return render(request, "form_login.html")
 
 def free_trial(request):
-    return render(request, "form_freetrial.html")
+    if request.method == "POST":
+        user_id = request.session.get("user_id")
+        user = Account_owners.objects.get(id=user_id)
+        name = user.Fullname
+        email = user.Email
+        date_2 = request.POST.get("date")
+        time = request.POST.get("time")
+        Free_trials_list.objects.create(
+            Fullname = name,
+            Email = email,
+            Date = date_2,
+            Time = time
+        )
+        return redirect('profile')    
+    today = date.today().isoformat()
+    return render(request, "form_freetrial.html",{
+        "today":today
+    })
 
 def profile(request):
+    if not request.session.get("user_id"):
+       return redirect("Homepage")
     user_id = request.session["user_id"]
     user = Account_owners.objects.get(id=user_id)
     return render(request, "profile.html",{
         "user":user
     })
+
+def Logout(request):
+    request.session.flush()
+    return redirect('Homepage')
+
+

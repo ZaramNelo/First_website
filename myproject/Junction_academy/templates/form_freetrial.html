@@ -4,31 +4,18 @@
     <title>Submit Data</title>
 </head>
 <body>
-    <a href="{% url 'Homepage' %}" target="back to homepage">
+    <a href="{% url 'Homepage' %}">
     <button type="button"> BACK </button>
     </a>
-    <h1>Submit your information</h1>
-    <form action="/form_freetrial" method="POST">
-        <label for="name">Fullname:</label><br>
-        <input type="text" id="name" name="name"  required placeholder="David John"><br><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required placeholder="DavidJohn@gmail.com"><br><br>
-        
-        <label for="number">Phone:</label><br>
-        <input type="tel" id="number" name="number" required placeholder="123-456-7890"><br><br>
-
+    <br><br><br>
+     <form action="{% url 'free_trial' %}", method="POST">
+        {% csrf_token %}
         <label for="date">Date available:</label><br>
-        <input type="date" id="date" name="date" required min="{{today}}" ><br>
-
+        <input type="date" id="date" name="date" required min="{{today}}" ><br><br>
+        <label for="time">Time:</label><br>
+        <input type="time" id="time" name="time" required >
         <label >Note:We are open from 11am-9pm, you can come for your free trial anyday between this time frame </label>
-        <br>
-        <br>
-
-
-        
-
-
+        <br><br>
         <input type="submit" value="Submit">
     </form>
    
