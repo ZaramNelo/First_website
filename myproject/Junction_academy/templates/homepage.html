@@ -3,38 +3,55 @@
 <html lang="en">
 <head>
     <title>JUNCTION ACADEMY</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/Homepage.css'%}">
 </head>
 <body>
+    <div id = "whole">
+    <div id="container_2">
     <div class="container_1">
-   <h1>WELCOME TO JUNCTION ACADEMY</h1>
-   <h4>phone: 647-555-7485</h4>
-   <h4>email: junctionacademy@gmail.com</h4>
-   <h4>Location: 277 Jarvis St. Toronto, ON M5B 2C2</h4>
-   </div>
+        <h1>WELCOME TO JUNCTION ACADEMY</h1>
+        <h4>Contact us on:</h4>
+        <h4>phone: 647-555-7485</h4>
+        <h4>email: junctionacademy@gmail.com</h4>
+        <h4>Location: 277 Jarvis St. Toronto, ON M5B 2C2</h4>
+        </div>
+    
+   <pre>Lorem ipsum dolor sit amet consectetur adipisicing elit.Necessitatibus
+totam cumque deserunt facilis est minima animi sed omnis rem? Nobis
+error repudiandae nesciunt hic qui animi iure ab quaerat laboriosam.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Esse perferendis autem doloremque provident, dignissimos 
+error dolorum rerum, optio voluptatum dolor similique 
+quisquam necessitatibus nostrum officiis ex ipsum, nesciunt 
+impedit! Sit.
+    </pre>
+    <div id="container_buttons">
+        <a href="{% url 'sign_up' %}">
+            <button id="button_1">Sign up!</button>
+        </a><br><br>
+        <a href="{% url 'sign_up' %}">
+        <button id="button_2">Get a free trial!</button>
+        </a><br><br>
+        <a href="{% url 'Log_in' %}">
+        <button id="button_3">Log in</button>
+        </a><br><br>
+    </div>
+</div>
 
-   <img src="{% static 'images/image_1.jpg' %}" alt="" width="800em">
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-    , totam cumque deserunt facilis est minima animi sed omnis rem? Nobis
-     error repudiandae nesciunt hic qui animi iure ab quaerat laboriosam.
-    </p>
-    <a href="{% url 'sign_up' %}">
-    <button>Sign up!</button>
-    </a>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Esse perferendis autem doloremque provident, dignissimos 
-        error dolorum rerum, optio voluptatum dolor similique 
-        quisquam necessitatibus nostrum officiis ex ipsum, nesciunt 
-        impedit! Sit.
-    </p>
-    <a href="{% url 'sign_up' %}">
-    <button>Get a free trial!</button>
-    </a>
-    <br><br>
-    <a href="{% url 'Log_in' %}">
-    <button>Log in</button>
-    </a>
+    <div id="container_3">
+        <img src="{% static 'images/image_1.jpg' %}" alt="Image" width="800em">
+         </div>
+</div>
+<div id="bottom">
+<img src="{% static 'images/image_5.jpg'%}" alt="Image" height="400em">
+<div id="text_logo">
+<pre id="text">TORONTO’S BRAZILIAN JIU-JITSU ACADEMY 
+     WITH WRESTLING AND FITNESS
+</pre>
+<img src="{% static 'images/logo.jpg'%}" alt="image" id="logo">
+    </div>
 
+</div>
     
 </body>
 </html>

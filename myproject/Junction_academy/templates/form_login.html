@@ -1,21 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/login.css'%}">
 </head>
 <body>
     <a href="{% url 'Homepage' %}" target="back to homepage">
-        <button type="button"> BACK </button><br><br>
+        <button type="button" style="width: 100px; height: 50px;"> BACK </button><br><br>
     </a>
+    <div class="text">
+    <h1>Junction Academy</h1>
+    <h2>Brazillian Jitjisu </h2>
+</div>
+    <div class="form_body">
     <form action="{% url 'Log_in' %}" method="POST">
         {% csrf_token %}
-    <label for="email">Email:</label><br>
+    <label for="email" style="font-size: 20px;">Email:</label><br>
     <input type="email" id="email" name="email" value="{{ email }}" placeholder="DavidJohn@gmail.com" required><br><br>
-    <label for="password">Password:</label><br>
+    <label for="password" style="font-size: 20px;">Password:</label><br>
     <input type="password" id="password" name="password" required><br><br>
-    <button type="submit">Submit</button>
-    </form>
-
     {% if message1 %}
     <p style="color: red;">{{ message1 }}</p>
 {% endif %}
@@ -23,6 +27,11 @@
 {% if message2 %}
 <p style="color: red;">{{ message2 }}</p>
 {% endif %}
+    <button type="submit" id="submit">Submit</button>
+    </form>
+    </div>
+
+
 
 
 </body>

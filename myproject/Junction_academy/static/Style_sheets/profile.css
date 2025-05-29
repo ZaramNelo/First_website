@@ -1,0 +1,41 @@
+body{
+    background-color: lightgrey;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 540px;   
+}
+.first a{
+   margin-left: auto
+}
+.details h3{
+    font-size: 50px;
+}
+
+.two_buttons{
+    display: flex;
+    margin-top: 10px;
+}
+#yes{
+    width: 100px;
+    margin: 0;
+}
+#no {
+    margin-left: 50px;
+    width: 100px;
+}
+#no button, #yes button{
+    border-radius: 20px;
+}
+
+.whole{
+    display: flex;
+   
+}
+img{
+    margin-left: 10px;
+    margin-top: 20px;
+}

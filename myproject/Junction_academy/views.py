@@ -59,6 +59,11 @@ def Log_in(request):
     return render(request, "form_login.html")
 
 def free_trial(request):
+    user_id = request.session.get("user_id")
+    user = Account_owners.objects.get(id=user_id)
+    user_email = user.Email
+    if Free_trials_list.objects.filter(Email=user_email).exists():
+       return redirect('used')
     if request.method == "POST":
         user_id = request.session.get("user_id")
         user = Account_owners.objects.get(id=user_id)
@@ -79,16 +84,40 @@ def free_trial(request):
     })
 
 def profile(request):
+    message = ''
     if not request.session.get("user_id"):
        return redirect("Homepage")
     user_id = request.session["user_id"]
     user = Account_owners.objects.get(id=user_id)
+    if Free_trials_list.objects.filter(Email=user.Email).exists():
+        main_user = Free_trials_list.objects.get(Email=user.Email)
+        date = main_user.Date
+        time = main_user.Time
+        return render(request, "profile.html",{
+        "user":user,
+        "date":date,
+        "time":time
+         })
     return render(request, "profile.html",{
-        "user":user
+        "user":user,
     })
 
 def Logout(request):
     request.session.flush()
     return redirect('Homepage')
+
+def used(request):
+    user_id = request.session.get("user_id")
+    user = Account_owners.objects.get(id=user_id)
+    user_email = user.Email
+    main_user = Free_trials_list.objects.get(Email=user_email)
+    date = main_user.Date
+    time = main_user.Time
+    return render(request,'used.html',{
+        "date":date,
+        "time":time,
+        "name":user.Fullname,
+        "email":user_email
+    })
 
 

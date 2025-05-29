@@ -1,34 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
    
     <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/sign_up.css'%}">
 </head>
 <body>
-    <form onsubmit="return Validate_password()" action="{% url 'sign_up' %}" method="POST">
-        {% csrf_token %}
     <a href="{% url 'Homepage' %}" target="back to homepage">
-        <button type="button"> BACK </button><br><br>
+        <button type="button" style="width: 100px; height: 50px;" > BACK </button><br><br>
     </a>
-    <label style="color: green; font-size: 20px ;">When you sign up , you get a free trial!</label><br><br>
-    <label for="name">Fullname:</label><br>
+    <div style="text-align: center;">
+        <h1>Junction Academy</h1>
+        <h2>Brazillian Jitjisu </h2>
+    </div>
+
+    <div class="form_body">
+    <form onsubmit="return Validate_password()" action="{% url 'sign_up' %}" method="POST" class="signup-form">
+    <label style="color: green; font-size: 20px ; ">When you sign up , you get a free trial!</label><br><br>
+        {% csrf_token %}
+    <label for="name" style="font-size: 20px;">Fullname:</label><br>
     <input type="text" id="name" name="name" value="{{ name }}" required placeholder="David John"><br><br>
         
-    <label for="email">Email:</label><br>
+    <label for="email" style="font-size: 20px;">Email:</label><br>
     <input type="email" id="email" name="email" value="{{ email }}" required placeholder="DavidJohn@gmail.com"><br><br>
         
-    <label for="number">Phone:</label><br>
+    <label for="number" style="font-size: 20px;">Phone:</label><br>
     <input type="tel" id="number" name="number" value="{{ number }}" required placeholder="123-456-7890"><br><br>
      
-    <label for="password">Password:</label><br>
+    <label for="password" style="font-size: 20px;">Password:</label><br>
     <input type="password" id="password" name="password" required ><br><br>
 
-    <label for="confirm_password">confim_Password:</label><br>
+    <label for="confirm_password" style="font-size: 20px;">confim_Password:</label><br>
     <input type="password" id="confirm_password" name="confirm_Password" required ><br><br>
-    <p id="Error_message" style="color: red;"></p>
+    <p id="Error_message" style="color: red; font-size: 20px;"></p>
+    {% if message %}
+    <p style="color: red; font-size: 20px">{{ message }}</p>
+   {% endif %}
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="submit">
      </form>
+    </div>
 
      <script>
         function Validate_password(){
@@ -44,10 +56,6 @@
             }
         }
      </script>
-
-     {% if message %}
-     <p style="color: red;">{{ message }}</p>
- {% endif %}
     
 </body>
 </html>
