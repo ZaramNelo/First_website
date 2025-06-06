@@ -48,7 +48,7 @@ def Log_in(request):
         else:
             users = Account_owners.objects.all()
             for user in users:
-                if check_password(password,user.password):
+                if check_password(password,user.password) and (user.Email == email):
                     request.session["user_id"] = user.id
                     return redirect("profile")
             return render(request,"form_login.html",{
