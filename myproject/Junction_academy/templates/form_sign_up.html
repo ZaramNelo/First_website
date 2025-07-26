@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="{% static 'Style_sheets/sign_up.css'%}">
 </head>
 <body>
-    <a href="{% url 'Homepage' %}" target="back to homepage">
-        <button type="button" style="width: 100px; height: 50px;" > BACK </button><br><br>
-    </a>
-    <div style="text-align: center;">
+    <a href="{% url 'Homepage' %}" target="back to homepage" class="back-link">
+        <button type="button" class="back-button">BACK</button>
+      </a>
+    
+      <div class="title-text">
         <h1>Junction Academy</h1>
-        <h2>Brazillian Jitjisu </h2>
-    </div>
+        <h2>Brazillian Jitjisu</h2>
+      </div>
+    
 
     <div class="form_body">
     <form onsubmit="return Validate_password()" action="{% url 'sign_up' %}" method="POST" class="signup-form">

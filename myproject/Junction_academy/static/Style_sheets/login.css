@@ -1,29 +1,179 @@
-body{
-    background-color: lightgray;
-    
-}
-.form_body{
+:root {
+    --bg-color: #121212;
+    --form-bg: #1e1e1e;
+    --text-color: #f0f0f0;
+    --input-bg: #2a2a2a;
+    --input-border: #444;
+    --button-bg: #3a3a3a;
+    --button-hover-bg: #5a5a5a;
+    --border-radius: 15px;
+    --font-size-label: 18px;
+    --font-size-input: 16px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  a button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+  }
+  
+  a button:hover {
+    background-color: var(--button-hover-bg);
+  }
+  
+  .text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .text h2 {
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    color: #ccc;
+  }
+  
+  .form_body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-form{
-    width: 500px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 1rem;
+  }
+  
+  form {
+    width: 100%;
+    background-color: var(--form-bg);
     padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-}
-#email,#password, #submit{
-    width: 90%;
-    font-size: 16px;
-    margin-top: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  }
+  
+  label {
+    font-size: var(--font-size-label);
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    font-size: var(--font-size-input);
     padding: 10px;
-    border-radius: 15px;
-}
+    border-radius: var(--border-radius);
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #66aaff;
+    outline: none;
+  }
+  
+  button#submit {
+    width: 100%;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button#submit:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 0 15px rgba(102, 170, 255, 0.7);
+  }
+  
+  /* Error messages */
+  p {
+    color: #ff6b6b;
+    margin: -15px 0 15px 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
 
-#submit:hover{
-    background-color: grey;
-}
-.text{
-    text-align: center;
-}
+  .back-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-decoration: none;
+  }
+  
+  .back-button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    form {
+      padding: 20px;
+    }
+  
+    .text h1 {
+      font-size: 2rem;
+    }
+  }

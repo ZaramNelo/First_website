@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="{% static 'Style_sheets/freetrial.css'%}">
 </head>
 <body>
+    <div class="back-button">
     <a href="{% url 'Homepage' %}" target="back to homepage">
         <button type="button" style="width: 100px; height: 50px;" > BACK </button><br><br>
     </a>
+</div>
     <br><br>
     <div class="form_body">
      <form onsubmit="return check_date()" action="{% url 'free_trial' %}" method="POST">
