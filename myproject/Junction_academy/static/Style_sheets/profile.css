@@ -152,16 +152,40 @@
   }
   
   /* Responsive */
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     .whole {
-      flex-direction: column;
-      max-width: 90vw;
+      padding: 1rem;
+    }
+  
+    .first h1 {
+      font-size: 3rem;  /* bigger main heading */
+    }
+  
+    .details label[style*="font-size: 50px"] {
+      font-size: 3.5rem !important;  /* increase big labels */
+    }
+  
+    .details label[style*="font-size: 30px"] {
+      font-size: 2.2rem !important;  /* increase smaller labels */
+    }
+  
+    #Logout {
+      width: 140px;
+      height: 55px;
+      font-size: 1.2rem;
+    }
+  
+    .two_buttons a button {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.3rem;
+    }
+  
+    pre {
+      font-size: 1.2rem;
     }
   
     img {
-      width: 100%;
-      border-left: none;
-      border-top: 1px solid #333;
-      margin-top: 2rem;
+      width: 100%; /* full width on mobile */
     }
   }
