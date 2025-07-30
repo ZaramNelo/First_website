@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" href="{% static 'Style_sheets/profile.css'%}">
+    <!-- <link rel="stylesheet" href="{% static 'Style_sheets/profile.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'Style_sheets/profile.css' %}?v={{ timestamp }}">
 </head>
 <body>
     <div class="whole">
@@ -36,8 +37,9 @@ scheduled time.</pre>
     </a>
     </div>
 </div>
-</div>
 <img src="{% static 'images/image_6.jpg' %}" alt="Images" width="900px">
+</div>
+
 
     
     

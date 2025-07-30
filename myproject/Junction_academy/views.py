@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import make_password,check_password
 from django.http import HttpResponse
 from .models import Account_owners,Free_trials_list
 from datetime import date
+from datetime import datetime
 
 # Create your views here.
 def Homepage(request):
@@ -98,8 +99,9 @@ def profile(request):
         "date":date,
         "time":time
          })
-    return render(request, "profile.html",{
-        "user":user,
+    return render(request, "profile.html", {
+        "user": user,
+        "timestamp": datetime.now().timestamp() 
     })
 
 def Logout(request):
