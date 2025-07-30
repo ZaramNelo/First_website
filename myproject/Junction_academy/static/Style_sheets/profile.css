@@ -158,13 +158,18 @@
       padding: 1rem;
     }
   
+    .whole > div:first-child {
+      width: 100%;
+      padding: 1rem;
+    }
+  
     .first h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       text-align: center;
     }
   
     .details label[style*="font-size: 50px"] {
-      font-size: 2.8rem !important;
+      font-size: 2.5rem !important;
       text-align: center;
     }
   
@@ -174,9 +179,14 @@
     }
   
     #Logout {
-      width: 120px;
+      width: 100%;
       height: 50px;
       font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+  
+    .two_buttons {
+      text-align: center;
     }
   
     .two_buttons a button {
@@ -197,15 +207,10 @@
     }
   
     img {
-      width: 100%;
+      width: 100% !important;
       height: auto;
-      margin-top: 2rem;
+      margin-top: 1rem;
       border-left: none;
       border-top: 1px solid #333;
-    }
-  
-    .details,
-    .two_buttons {
-      text-align: center;
     }
   }
