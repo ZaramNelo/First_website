@@ -178,11 +178,54 @@
   
   /* Responsive */
   @media (max-width: 480px) {
-    .signup-form {
-      padding: 20px;
+    body {
+      padding: 10px;
+      margin: 0;
     }
   
-    div[style*="text-align: center;"] h1 {
-      font-size: 2rem;
+    .signup-form {
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+  
+    .form_body {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    .title-text h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .title-text h2 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    #submit {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .back-button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    label {
+      font-size: 1rem;
+    }
+  
+    #Error_message {
+      font-size: 1rem;
     }
   }
