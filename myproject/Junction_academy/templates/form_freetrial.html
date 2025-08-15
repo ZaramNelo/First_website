@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Data</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/freetrial.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="back-button">
+    <a href="{% url 'Homepage' %}" target="back to homepage">
+        <button type="button" style="width: 100px; height: 50px;" > BACK </button><br><br>
+    </a>
+</div>
+    <br><br>
+    <div class="form_body">
+     <form onsubmit="return check_date()" action="{% url 'free_trial' %}" method="POST">
+        {% csrf_token %}
+        <label for="date" style="font-size: 17px; font-weight: bold;">Date available:</label><br>
+        <input type="date" id="date" name="date" required min="{{today}}" ><br><br>
+        <label for="time"  style="font-size: 17px; font-weight: bold;">Time:</label><br>
+        <input type="time" id="time" name="time" required min="11:00" max="21:00"><br><br>
+        <p style="color: red;" id="Error_message"></p><br>
+        {% if message %}
+        <p >{{ message }}</p> <br>
+    {% endif %}
+
+        <input type="submit" value="Submit">
+        <pre >Note:We are open from 11am-9pm, Monday to Saturday,
+you can come for your free trial anyday 
+between this time frame </pre>
+    </form>
+</div>
+    <script>
+        function check_date(){
+        const element = document.querySelector("#date")
+        const error = document.querySelector("#Error_message")
+        const date = new Date(element.value)
+            if(date.getDay() === 6){
+              error.textContent = "Please enter a valid date. Between Monday to Saturday"
+              return false
+            }
+            else{ 
+                error.textContent = ""
+                return true
+            }
+        
+    }
+    </script>
+   
+</body>
+</html>

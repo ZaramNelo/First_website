@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/login.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <a href="{% url 'Homepage' %}" target="back to homepage" class="back-link">
+        <button type="button" class="back-button">BACK</button>
+      </a>
+    <div class="text">
+    <h1>Junction Academy</h1>
+    <h2>Brazillian Jitjisu </h2>
+</div>
+    <div class="form_body">
+    <form action="{% url 'Log_in' %}" method="POST">
+        {% csrf_token %}
+    <label for="email" style="font-size: 20px;">Email:</label><br>
+    <input type="email" id="email" name="email" value="{{ email }}" placeholder="DavidJohn@gmail.com" required><br><br>
+    <label for="password" style="font-size: 20px;">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    {% if message1 %}
+    <p style="color: red;">{{ message1 }}</p>
+{% endif %}
+
+{% if message2 %}
+<p style="color: red;">{{ message2 }}</p>
+{% endif %}
+    <button type="submit" id="submit">Submit</button>
+    </form>
+    </div>
+
+
+
+
+</body>
+</html>

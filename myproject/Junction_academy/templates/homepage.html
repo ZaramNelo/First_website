@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JUNCTION ACADEMY</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/Homepage.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id = "whole">
+    <div id="container_2">
+    <div class="container_1">
+        <h1>WELCOME TO JUNCTION ACADEMY</h1>
+        <h4>Contact us on:</h4>
+        <h4>phone: 647-555-7485</h4>
+        <h4>email: junctionacademy@gmail.com</h4>
+        <h4>Location: 277 Jarvis St. Toronto, ON M5B 2C2</h4>
+        </div>
+    
+   <p>Welcome to Junction Academy, where the art of Brazilian Jiu-Jitsu
+becomes a path to personal growth, discipline, and lifelong confidence. 
+ Our academy is built on a strong foundation of respect, perseverance, and 
+ community. We offer a supportive environment for individuals of all ages 
+ and experience levels, whether you are stepping onto the mat for the first 
+ time or continuing a journey you began years ago. At Junction Academy, we 
+ believe that martial arts training is about more than physical fitness. 
+ It teaches focus, humility, mental resilience, and the value of consistent 
+ hard work. Our experienced instructors are dedicated not just to helping 
+ you improve your techniques, but also to helping you become the best version 
+ of yourself.
+    </p>
+    <div id="container_buttons">
+        <a href="{% url 'sign_up' %}">
+            <button id="button_1">Sign up!</button>
+        </a><br><br>
+        <a href="{% url 'Log_in' %}">
+        <button id="button_3">Log in</button>
+        </a><br><br>
+    </div>
+</div>
+
+    <div id="container_3">
+        <img src="{% static 'images/image_1.jpg' %}" alt="Image" width="800em">
+         </div>
+</div>    
+</body>
+</html>

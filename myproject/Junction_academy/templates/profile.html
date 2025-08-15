@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'Style_sheets/profile.css' %}?v={{ timestamp }}">
+    
+</head>
+<body>
+    <div class="whole">
+        <div class="content-container">
+            <div class="first">
+                <h1>JUNCTION ACADEMY</h1>
+                <a href="{% url 'Logout' %}">
+                    <button id="Logout" style="width: 100px; height: 50px; font-size:1.5rem ">Log Out</button>
+                </a>
+            </div>
+            <hr>
+            <div class="details">
+                <label style="font-size: 50px;">Welcome {{ user.Fullname }}</label><br><br>
+                <label style="font-size: 30px;">Schedule:</label><br>
+                {% if date %}
+                    <label style="color: blue">You have a scheduled freetrial on {{ time }} {{ date }}</label><br>
+                {% else %}
+                    <label>There is nothing on your schedule</label>
+                {% endif %}
+                <br><br><br>
+                <p>Contact us on:</p>
+                <label id="label1">Email: Junctionacademy@gmail.com</label>
+                <label id="label2">Phone: 647-555-748</label><br>
+                <pre style="font-family: Arial, Helvetica, sans-serif; font-size:1.5rem;">
+Note: We will send you an email reminder a day before your scheduled
+time.
+                </pre>
+            </div>
+            <div class="two_buttons">
+                <a id="yes" href="{% url 'free_trial' %}">
+                    <button style="font-size:1.5rem; padding: 16px 30px;">Get a Freetrial</button><br><br>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

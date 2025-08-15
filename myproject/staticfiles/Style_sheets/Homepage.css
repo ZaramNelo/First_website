@@ -1,0 +1,150 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --button-bg: #1f1f1f;
+    --button-hover: #3a3a3a;
+    --button-radius: 50px;
+    --button-height: 40px;
+    --font-size-large: 1.125rem;
+    --font-weight-bold: 700;
+  }
+  
+  /* Full page setup with animated gradient background */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Main container with translucent background */
+  #whole {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    color: var(--text-color);
+  }
+  
+  /* Content container 2 (text block) */
+  #container_2 {
+    flex: 1 1 350px;
+    min-width: 300px;
+    text-align: left;
+  }
+  
+  /* Adjust container_1 inside container_2 */
+  .container_1 h1,
+  .container_1 h4 {
+    margin: 0.3rem 0;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  /* Preformatted text styling */
+  pre {
+    white-space: pre-wrap;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Buttons container */
+  #container_buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--button-radius);
+    height: var(--button-height);
+    padding: 0 1.5rem;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Container 3 (image container) */
+  #container_3 {
+    flex: 1 1 400px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #container_3 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  }
+  
+  @media (max-width: 900px) {
+    #whole {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #container_2, #container_3 {
+      min-width: 100%;
+      text-align: center;
+    }
+  
+    /* Put text FIRST */
+    #container_2 {
+      order: 1;
+    }
+  
+    /* Put image SECOND */
+    #container_3 {
+      order: 2;
+      margin-top: 2rem;
+    }
+  
+    #container_buttons {
+      justify-content: center;
+    }
+  }
